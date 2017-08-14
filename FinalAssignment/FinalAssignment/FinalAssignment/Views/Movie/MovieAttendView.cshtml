@@ -1,0 +1,45 @@
+﻿
+
+
+@{
+    ViewBag.Title = "MovieAttendView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MovieAttendView</h2>
+
+@if (Model.Movie.Count == 0)
+{
+    <text>No One has booked a movie to attend</Text>
+}
+else
+    @model IEnumerable<FinalAssignment.Models.ViewModels.AttendingViewModel>
+    <table class="table table-striped">
+        <tr>
+            <td>Heading</td>
+            <td>Heading</td>
+            <td>Heading</td>
+            <td>Heading</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.customer.Name</td>
+                <td>@item.movie.Name</td>
+                <td>@item.theatre.Location</td>
+         
+                
+            </tr>
+            }
+    </table>
+
+
+
+    <ul>
+    @foreach (var movie in Model.Movie)
+    {
+        <li>@movie.name</li>
+    }
+        </ul>
+}
+

@@ -6,7 +6,6 @@ namespace FinalAssignment.Models
 {
     public class Movie
     {
-
         public int Id { get; set; }
         [Required]
         [MaxLength(100)]
